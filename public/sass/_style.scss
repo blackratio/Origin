@@ -1,0 +1,135 @@
+/*************************************
+   GENERAL
+*************************************/
+body {
+   font-family: 'Roboto', sans-serif;
+   font-size: 14px;
+   color: $lynch;
+
+}
+* {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+
+/*************************************
+   MAINMENU
+*************************************/
+#mainMenu {
+   position: fixed;
+   z-index: 2;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 60px;
+   padding: 0 10px;
+   background-color: $white;
+   ul {
+      a {
+         font-weight: 600;
+         height: 60px;
+         line-height: 60px;
+         padding: 0 10px;
+         font-size: 1.2em;
+         color: $blueRoyal;
+      }
+      a:hover {
+         background-color: $porcelain;
+      }
+      a.home:hover {
+         background-color: transparent;
+      }
+   }
+}
+
+
+/*************************************
+   MAINWRAPPER
+*************************************/
+#mainWrapper {
+   padding: 60px 0 20px 0;
+}
+
+#contentWrapper {
+   padding: 20px;
+   margin: 0 auto;
+   max-width: 1100px;
+}
+
+
+/*************************************
+   BUTTONS
+*************************************/
+.btn {
+   background-color: $blueRoyal;
+   color: $white;
+}
+.btn:hover {
+   background-color: $blueStrong;
+}
+.btn_outline {
+   border-color: $blueRoyal;
+   color: $blueRoyal;
+}
+.btn_outline:hover {
+   background-color: $white !important;
+   border-color: $white;
+}
+
+/*************************************
+
+   HOME STYLE
+
+*************************************/
+
+/****************
+   Featured
+*/
+#featured {
+   position: relative;
+   padding: 80px 50px;
+   @include linear-gradient($edward, $porcelain);
+   h3 {
+      color: $lynch;
+   }
+   #btn_wrapper {
+      margin-top: 50px;
+   }
+   #infos_version {
+      color: $lynch;
+   }
+}
+
+#current_links {
+   background-color: $lynch;
+   ul {
+      margin: 0 auto;
+      max-width: 1100px;
+      a {
+         color: $white;
+         padding: 15px 20px;
+      }
+      a:hover {
+         background-color: $silver;
+         color: $lynch;
+      }
+   }
+}
+
+
+.flexWrapper {
+   @include flexbox-wrapper(wrap, row, flex-start, stretch);
+}
+.flexItem {
+   @include flexbox-item-number(1.5%, 4);
+}
+.item {
+   text-align: center;
+   padding: 15px;
+   i {
+      font-size: 7em;
+      color: $silver;
+   }
+}
