@@ -113,6 +113,13 @@ a {
   text-decoration: none;
 }
 
+/* Blocks */
+
+.content_section .wrapp_box {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
 /* Flex Grid */
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -299,20 +306,20 @@ a:hover {
 #featured {
   position: relative;
   padding: 120px 50px;
-  background-color: #6c7a89;
+  background-color: #bfbfbf;
   /* Fallback Color */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#bfbfbf), to(#6c7a89));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#bfbfbf));
   /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #bfbfbf, #6c7a89);
+  background-image: -webkit-linear-gradient(top, #ddd, #bfbfbf);
   /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(top, #bfbfbf, #6c7a89);
+  background-image: -moz-linear-gradient(top, #ddd, #bfbfbf);
   /* FF3.6 */
-  background-image: -ms-linear-gradient(top, #bfbfbf, #6c7a89);
+  background-image: -ms-linear-gradient(top, #ddd, #bfbfbf);
   /* IE10 */
-  background-image: -o-linear-gradient(top, #bfbfbf, #6c7a89);
+  background-image: -o-linear-gradient(top, #ddd, #bfbfbf);
   /* Opera 11.10+ */
-  background-image: linear-gradient(top, #bfbfbf, #6c7a89);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#bfbfbf', EndColorStr='#6c7a89');
+  background-image: linear-gradient(top, #ddd, #bfbfbf);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ddd', EndColorStr='#bfbfbf');
 }
 
 #featured h3 {
@@ -328,16 +335,11 @@ a:hover {
 }
 
 #featured #infos_version {
-  color: #bfbfbf;
+  color: #6c7a89;
 }
 
 #content_links {
-  background-color: #4183d7;
-}
-
-#content_links ul {
-  margin: 0 auto;
-  max-width: 1100px;
+  padding: 10px 0;
 }
 
 #content_links ul a {
@@ -347,6 +349,14 @@ a:hover {
 
 #content_links ul a:hover {
   background-color: #3a539b;
+}
+
+.content_section.content_lowLight {
+  background-color: #ecf0f1;
+}
+
+.content_section.content_highLight {
+  background-color: #4183d7;
 }
 
 .flexWrapper {

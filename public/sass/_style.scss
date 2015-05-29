@@ -50,12 +50,6 @@ a:hover {
    padding: 0 0 20px 0;
 }
 
-#contentWrapper {
-   padding: 20px;
-   margin: 0 auto;
-   max-width: 1100px;
-}
-
 
 /*************************************
    BUTTONS
@@ -90,7 +84,7 @@ a:hover {
 #featured {
    position: relative;
    padding: 120px 50px;
-   @include linear-gradient($silver, #6c7a89);
+   @include linear-gradient(#ddd, $silver);
    h3 {
       color: $white;
    }
@@ -101,15 +95,16 @@ a:hover {
       }
    }
    #infos_version {
-      color: $silver;
+      color: $lynch;
    }
 }
 
+
+
+
 #content_links {
-   background-color: $blueRoyal;
+   padding: 10px 0;
    ul {
-      margin: 0 auto;
-      max-width: 1100px;
       a {
          color: $white;
          padding: 15px 20px;
@@ -119,6 +114,16 @@ a:hover {
       }
    }
 }
+.content_section.content_lowLight {
+   background-color: $porcelain;
+}
+
+.content_section.content_highLight {
+   background-color: $blueRoyal;
+}
+
+
+
 
 
 .flexWrapper {
