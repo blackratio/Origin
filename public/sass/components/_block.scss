@@ -1,6 +1,17 @@
-.content_section {
-   .wrapp_box {
-      margin: 0 auto;
-      max-width: 1100px;
+.headerSection {
+   padding: 70px 40px 40px 40px;
+   h1 {
+      margin-bottom: 5px;
    }
+   h4 {
+      margin-top: 0;
+   }
+}
+.content_section {
+      position: relative;
+}
+.wrapp_box {
+   margin: 0 auto;
+   max-width: 1100px;
+   padding: 20px 40px;
 }

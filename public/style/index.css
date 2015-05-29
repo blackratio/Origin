@@ -115,9 +115,26 @@ a {
 
 /* Blocks */
 
-.content_section .wrapp_box {
+.headerSection {
+  padding: 70px 40px 40px 40px;
+}
+
+.headerSection h1 {
+  margin-bottom: 5px;
+}
+
+.headerSection h4 {
+  margin-top: 0;
+}
+
+.content_section {
+  position: relative;
+}
+
+.wrapp_box {
   margin: 0 auto;
   max-width: 1100px;
+  padding: 20px 40px;
 }
 
 /* Flex Grid */
@@ -178,6 +195,15 @@ a {
 	//	Organize item with alignment & margin options
 ///////////////////////////////////////////////////////////////////////////*/
 
+/* Effect */
+
+.parallax {
+  background-image: url("../img/earthBackground.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* Helpers */
 
 .left {
@@ -192,6 +218,10 @@ a {
 
 .center {
   text-align: center;
+}
+
+.align_left {
+  text-align: left;
 }
 
 .clearfix {
@@ -223,12 +253,6 @@ body {
   color: #6c7a89;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 a {
   color: #4183d7;
 }
@@ -244,12 +268,11 @@ a:hover {
 #mainMenu {
   position: fixed;
   z-index: 2;
-  top: 20px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
-  padding: 0 20px;
-  background-color: transparent;
+  padding: 20px;
+  background-color: rgba(254, 254, 254, 0.9);
 }
 
 #mainMenu ul a {
@@ -283,14 +306,14 @@ a:hover {
 }
 
 .btn_outline {
-  border-color: #fefefe;
-  color: #fefefe;
+  border-color: #6c7a89;
+  color: #6c7a89;
 }
 
 .btn_outline:hover {
-  background-color: #fefefe !important;
-  border-color: #fefefe;
-  color: #4183d7;
+  background-color: #6c7a89 !important;
+  border-color: #6c7a89;
+  color: #fefefe;
 }
 
 /*************************************
@@ -305,21 +328,22 @@ a:hover {
 
 #featured {
   position: relative;
+  margin-top: 80px;
   padding: 120px 50px;
-  background-color: #bfbfbf;
+  background-color: #cf000f;
   /* Fallback Color */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#bfbfbf));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62459), to(#cf000f));
   /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #ddd, #bfbfbf);
+  background-image: -webkit-linear-gradient(top, #f62459, #cf000f);
   /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(top, #ddd, #bfbfbf);
+  background-image: -moz-linear-gradient(top, #f62459, #cf000f);
   /* FF3.6 */
-  background-image: -ms-linear-gradient(top, #ddd, #bfbfbf);
+  background-image: -ms-linear-gradient(top, #f62459, #cf000f);
   /* IE10 */
-  background-image: -o-linear-gradient(top, #ddd, #bfbfbf);
+  background-image: -o-linear-gradient(top, #f62459, #cf000f);
   /* Opera 11.10+ */
-  background-image: linear-gradient(top, #ddd, #bfbfbf);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ddd', EndColorStr='#bfbfbf');
+  background-image: linear-gradient(top, #f62459, #cf000f);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f62459', EndColorStr='#cf000f');
 }
 
 #featured h3 {
@@ -334,12 +358,19 @@ a:hover {
   margin: 0 10px;
 }
 
-#featured #infos_version {
-  color: #6c7a89;
+#featured #btn_wrapper .btn_outline {
+  border-color: #fefefe;
+  color: #fefefe;
 }
 
-#content_links {
-  padding: 10px 0;
+#featured #btn_wrapper .btn_outline:hover {
+  background-color: #fefefe !important;
+  border-color: #fefefe;
+  color: #3a539b;
+}
+
+#featured #infos_version {
+  color: #bfbfbf;
 }
 
 #content_links ul a {
@@ -351,12 +382,13 @@ a:hover {
   background-color: #3a539b;
 }
 
-.content_section.content_lowLight {
+.content_lowLight {
   background-color: #ecf0f1;
 }
 
-.content_section.content_highLight {
-  background-color: #4183d7;
+.content_highLight {
+  background-color: #6c7a89;
+  color: #fefefe;
 }
 
 .flexWrapper {

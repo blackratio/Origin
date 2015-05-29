@@ -72,7 +72,7 @@ function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $location
       url: '/gettingstarted',
       views: {
          'main_content': {
-            templateUrl: 'partials/typography.html',
+            templateUrl: 'partials/gettingstarted.html',
             controller: 'homeCtrl'
          }
       },
