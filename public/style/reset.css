@@ -142,9 +142,19 @@ img {
  * Contain overflow in all browsers.
  */
 
+pre {
+  overflow: auto;
+}
+
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
+
+code,
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
 
 /* Forms
    ========================================================================== */
