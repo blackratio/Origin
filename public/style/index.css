@@ -101,6 +101,35 @@ ul {
   background-color: transparent !important;
 }
 
+/* Block */
+
+/*************************************
+   MAINWRAPPER
+*************************************/
+
+#mainWrapper {
+  padding: 60px 0 0 0;
+}
+
+#sectionWrapper {
+  padding: 40px 0;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.wrapBox {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+/***************
+   Highlight Block
+***************/
+
+.highlight {
+  background-color: #ecf0f1;
+}
+
 /* Links */
 
 a {
@@ -255,20 +284,6 @@ body {
 }
 
 /*************************************
-   MAINWRAPPER
-*************************************/
-
-#mainWrapper {
-  padding: 60px 0 20px 0;
-}
-
-#contentWrapper {
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1100px;
-}
-
-/*************************************
    BUTTONS
 *************************************/
 
@@ -336,19 +351,17 @@ body {
   background-color: #6c7a89;
 }
 
-#current_links ul {
-  margin: 0 auto;
-  max-width: 1100px;
+#current_links a {
+  padding: 20px 10px;
+  color: #bfbfbf;
 }
 
-#current_links ul a {
+#current_links a i {
+  font-size: 3em;
+}
+
+#current_links a:hover {
   color: #fefefe;
-  padding: 15px 20px;
-}
-
-#current_links ul a:hover {
-  background-color: #bfbfbf;
-  color: #6c7a89;
 }
 
 .flexWrapper {
