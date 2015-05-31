@@ -13,6 +13,7 @@
       "gulp-livereload": "3.8.0",
       "gulp-uncss": "1.0.1",
       "gulp-notify": "2.2.0",
-      "gulp-plumber": "1.0.0"
+      "gulp-plumber": "1.0.0",
+      "angular": "1.4.0"
    }
 }

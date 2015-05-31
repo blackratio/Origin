@@ -89,3 +89,27 @@
 .flex_item_align {
 	@include flexbox-item-align(stretch, 0.5%);
 }
+
+
+
+
+
+
+
+[flex-direction="vertical"] {
+
+   @include flexbox-wrapper(wrap, vertical, flex-start, stretch);
+
+   .flexItem {
+      @include flexbox-item-number(1.5%, 3);
+   }
+}
+
+[flex-direction="row"] {
+
+   @include flexbox-wrapper(wrap, row, flex-start, stretch);
+
+   .flexItem {
+      @include flexbox-item-number(1.5%, 3);
+   }
+}

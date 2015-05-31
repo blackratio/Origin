@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*************************************
    MAINWRAPPER
 *************************************/
@@ -25,4 +26,26 @@
 }
 .highlightMore {
    background-color: $porcelain;
+=======
+.headerSection {
+   padding: 90px 40px 10px 40px;
+   h1 {
+      font-weight: 300;
+      margin-bottom: 0;
+      margin-top: 0;
+      color: #f62459;
+      font-size: 1.8em;
+   }
+   h4 {
+      margin-top: 0;
+   }
+}
+.content_section {
+      position: relative;
+}
+.wrapp_box {
+   margin: 0 auto;
+   max-width: 1100px;
+   padding: 40px;
+>>>>>>> development
 }

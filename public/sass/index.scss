@@ -3,8 +3,8 @@
 /*********************************************************************************
 **********************************************************************************
 
- * Author : DWK
- * Name : CORTEX MATERIALS
+ * Author : David Wieczorek
+ * Name : ORIGIN
  * Version : 0.1
  * Date : 27/05/2015
 
@@ -30,8 +30,14 @@
 /* Links */
 @import 'components/links';
 
+/* Blocks */
+@import 'components/block';
+
 /* Flex Grid */
 @import 'components/flexGrid';
+
+/* Effect */
+@import 'components/effect';
 
 /* Helpers */
 @import 'components/helpers';

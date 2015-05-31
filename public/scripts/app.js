@@ -63,7 +63,7 @@ function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $location
       },
       data : {
          mainSection: 'framework',
-         pageTitle: 'Cortex Framework Home',
+         pageTitle: 'Origin Framework Home',
          section: 'home'
       }
    })
@@ -72,14 +72,14 @@ function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $location
       url: '/gettingstarted',
       views: {
          'main_content': {
-            templateUrl: 'partials/typography.html',
+            templateUrl: 'partials/gettingstarted.html',
             controller: 'homeCtrl'
          }
       },
       data : {
          mainSection: 'framework',
-         pageTitle: 'Cortex Framework Typography',
-         section: 'typography'
+         pageTitle: 'Origin Framework Getting Started',
+         section: 'gettingStarted'
       }
    })
 
