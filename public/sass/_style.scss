@@ -131,18 +131,13 @@ a:hover {
 
 
 
-.flexWrapper {
-   @include flexbox-wrapper(wrap, row, flex-start, stretch);
-}
-.flexItem {
-   @include flexbox-item-number(1.5%, 4);
-}
+
 
 .item {
    text-align: center;
    padding: 15px;
    i {
       font-size: 7em;
-      color: $silver;
+      color: $blueRoyal;
    }
 }
