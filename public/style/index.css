@@ -102,35 +102,6 @@ ul {
   background-color: transparent !important;
 }
 
-/* Block */
-
-/*************************************
-   MAINWRAPPER
-*************************************/
-
-#mainWrapper {
-  padding: 60px 0 0 0;
-}
-
-#sectionWrapper {
-  padding: 40px 0;
-  margin: 0 auto;
-  max-width: 1100px;
-}
-
-.wrapBox {
-  margin: 0 auto;
-  max-width: 1100px;
-}
-
-/***************
-   Highlight Block
-***************/
-
-.highlight {
-  background-color: #ecf0f1;
-}
-
 /* Links */
 
 a {
@@ -340,8 +311,6 @@ a:hover {
 }
 
 /*************************************
-<<<<<<< HEAD
-=======
    MAINWRAPPER
 *************************************/
 
@@ -350,7 +319,6 @@ a:hover {
 }
 
 /*************************************
->>>>>>> development
    BUTTONS
 *************************************/
 
@@ -422,19 +390,6 @@ a:hover {
   color: #fefefe;
 }
 
-<<<<<<< HEAD
-#current_links a {
-  padding: 20px 10px;
-  color: #bfbfbf;
-}
-
-#current_links a i {
-  font-size: 3em;
-}
-
-#current_links a:hover {
-  color: #fefefe;
-=======
 #featured #btn_wrapper .btn_outline:hover {
   background-color: #fefefe !important;
   border-color: #fefefe;
@@ -452,7 +407,6 @@ a:hover {
 
 #content_links ul a:hover {
   background-color: #3a539b;
->>>>>>> development
 }
 
 .content_lowLight {
