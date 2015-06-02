@@ -9,10 +9,10 @@ body {
 }
 
 a {
-   color: $blueRoyal;
+   color: $blueStrong;
 }
 a:hover {
-   color: $blueStrong;
+   color: $blueRoyal;
 }
 
 /*************************************
@@ -24,8 +24,8 @@ a:hover {
    top: 0;
    left: 0;
    width: 100%;
-   padding: 20px;
-   background-color: rgba(254, 254, 254, 0.9);
+   padding: 15px 20px;
+   background-color: rgba(255, 255, 255, 1);
    ul {
       a {
          font-weight: 600;
@@ -50,11 +50,11 @@ a:hover {
    BUTTONS
 *************************************/
 .btn {
-   background-color: $blueRoyal;
+   background-color: $blueStrong;
    color: $white;
 }
 .btn:hover {
-   background-color: $blueStrong;
+   background-color: $blueRoyal;
    color: $white;
 }
 .btn_outline {
@@ -78,9 +78,8 @@ a:hover {
 */
 #featured {
    position: relative;
-   margin-top: 80px;
-   padding: 120px 50px;
-   @include linear-gradient(rgba(68,102,153,1), rgba(85,85,119,1));
+   padding: 150px 50px 120px 50px;
+   @include linear-gradient(rgba(8,104,172,1), rgba(8,64,129,1));
    h3 {
       color: $white;
    }
@@ -92,6 +91,7 @@ a:hover {
       .btn_outline {
          border-color: $white;
          color: $white;
+
       }
       .btn_outline:hover {
          background-color: $white !important;
@@ -100,21 +100,22 @@ a:hover {
       }
    }
    #infos_version {
-      color: $silver;
+      color: $blueStrong;
    }
 }
 
 
-
-
 #content_links {
+   .wrapp_box {
+      padding: 25px 50px;
+   }
    ul {
       a {
-         color: $white;
-         padding: 15px 20px;
+         color: $blueRoyal;
+         padding: 5px 20px;
       }
       a:hover {
-         background-color: $blueStrong;
+         color: $white;
       }
    }
 }
@@ -123,7 +124,7 @@ a:hover {
 }
 
 .content_highLight {
-   background-color: $lynch;
+   background-color: $blueStrong;
    color: $white;
 }
 

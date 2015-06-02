@@ -8,6 +8,10 @@
 }
 .center {
    text-align: center;
+   li {
+      float: none;
+      display: inline-block;
+   }
 }
 .align_right {
    text-align: right;
