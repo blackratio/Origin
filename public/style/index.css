@@ -357,20 +357,20 @@ a:hover {
   position: relative;
   margin-top: 80px;
   padding: 120px 50px;
-  background-color: #cf000f;
+  background-color: #555577;
   /* Fallback Color */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62459), to(#cf000f));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#446699), to(#555577));
   /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #f62459, #cf000f);
+  background-image: -webkit-linear-gradient(top, #446699, #555577);
   /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(top, #f62459, #cf000f);
+  background-image: -moz-linear-gradient(top, #446699, #555577);
   /* FF3.6 */
-  background-image: -ms-linear-gradient(top, #f62459, #cf000f);
+  background-image: -ms-linear-gradient(top, #446699, #555577);
   /* IE10 */
-  background-image: -o-linear-gradient(top, #f62459, #cf000f);
+  background-image: -o-linear-gradient(top, #446699, #555577);
   /* Opera 11.10+ */
-  background-image: linear-gradient(top, #f62459, #cf000f);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f62459', EndColorStr='#cf000f');
+  background-image: linear-gradient(top, #446699, #555577);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#446699', EndColorStr='#555577');
 }
 
 #featured h3 {

@@ -80,7 +80,7 @@ a:hover {
    position: relative;
    margin-top: 80px;
    padding: 120px 50px;
-   @include linear-gradient(#f62459, #cf000f);
+   @include linear-gradient(rgba(68,102,153,1), rgba(85,85,119,1));
    h3 {
       color: $white;
    }
