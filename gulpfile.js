@@ -18,9 +18,9 @@ var plumber = require('gulp-plumber');
 gulp.task('sass', function () {
    gulp.src('public/sass/**/*.scss')
       .pipe(sass())
-      .pipe(uncss({
-         html: ['public/**/*.html']
-      }))
+      //.pipe(uncss({
+         //html: ['public/**/*.html']
+      //}))
       .pipe(gulp.dest('public/style'))
       .pipe(livereload({ start: true }))
       .pipe(notify({ message: 'SCSS to css task complete' }))
