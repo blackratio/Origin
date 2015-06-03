@@ -1,5 +1,7 @@
 .headerSection {
-   padding: 90px 40px 10px 40px;
+   .wrapp_box {
+      padding: 80px 0 10px 15px;
+   }
    h1 {
       font-weight: 300;
       margin-bottom: 0;
@@ -17,5 +19,17 @@
 .wrapp_box {
    margin: 0 auto;
    max-width: 1100px;
-   padding: 50px 40px;
+   padding: 25px 40px;
+}
+.content_lowLight {
+   pre {
+      background-color: #333;
+      color: $white;
+   }
+}
+.content_highLight {
+   pre {
+      background-color: $blueRoyal;
+      color: $white;
+   }
 }
