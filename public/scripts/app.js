@@ -1,4 +1,7 @@
-'use strict';
+function strictMode() {
+    "use strict";
+    return true;
+}
 
 var services = angular.module('services', []);
 var controllers = angular.module('controllers', []);
@@ -82,6 +85,21 @@ function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $location
          section: 'gettingStarted'
       }
    })
+
+   .state('components', {
+      url: '/components',
+      views: {
+         'main_content': {
+            templateUrl: 'partials/components.html',
+            controller: 'componentsCtrl'
+         }
+      },
+      data : {
+         mainSection: 'framework',
+         pageTitle: 'Origin Framework Components',
+         section: 'components'
+      }
+   });
 
 }]);
 

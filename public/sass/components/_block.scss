@@ -23,13 +23,20 @@
 }
 .content_lowLight {
    pre {
-      background-color: #333;
+      background-color: $blueVeryStrong;
       color: $white;
    }
 }
 .content_highLight {
    pre {
-      background-color: $blueRoyal;
-      color: $white;
+      background-color: $blueVeryStrong;
+      color: $blueRoyal;
    }
+}
+
+.show_box {
+   padding: 20px 40px;
+   border: 1px solid $silver;
+   background-color: $porcelain;
+   border-radius: 4px;
 }
