@@ -15,6 +15,7 @@ a:hover {
    color: $blueRoyal;
 }
 
+
 /*************************************
    MAINMENU
 *************************************/
@@ -27,6 +28,9 @@ a:hover {
    padding: 15px 20px;
    background-color: rgba(255, 255, 255, 1);
    ul {
+      li:last-child {
+         margin-left: 20px;
+      }
       a {
          font-weight: 600;
          height: 40px;
@@ -67,6 +71,7 @@ a:hover {
    color: $white;
 }
 
+
 /*************************************
 
    HOME STYLE
@@ -76,6 +81,7 @@ a:hover {
 /****************
    Featured
 */
+
 #featured {
    position: relative;
    padding: 150px 50px 90px 50px;
@@ -130,11 +136,6 @@ a:hover {
 }
 
 
-
-
-
-
-
 .item {
    text-align: center;
    padding: 15px;
@@ -156,19 +157,42 @@ a:hover {
 
 *************************************/
 
+/****************
+   Left Menu
+*/
+#leftMenu {
+   flex: inherit;
+   width: 150px;
+   margin-right: 15px;
+   a {
+      font-size: 1.4em;
+      padding: 5px 0;
+      color: $lynch;
+   }
+   a:hover {
+      padding: 5px 0 5px 3px;
+      color: $blueRoyal;
+   }
+}
+
+/****************
+   Components page style
+*/
 #components {
    h2.title {
-      color: $blueRoyal;
+      color: $silver;
       margin-bottom: 35px;
-      padding-bottom: 15px;
-      border-bottom: 1px dashed $silver;
+      padding-left: 15px;
+      border-left: 10px solid $silver;
+   }
+   p {
+      margin-bottom: 30px;
    }
 }
 
 .show_box {
-   padding: 20px 40px;
-   border: 1px solid $silver;
-   background-color: $lightgray;
+   padding: 10px 20px;
+   border: 1px solid $porcelain;
    border-radius: 4px;
    margin-bottom: 20px;
 }
