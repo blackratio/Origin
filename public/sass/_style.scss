@@ -3,7 +3,7 @@
 *************************************/
 body {
    font-family: 'Roboto', sans-serif;
-   font-size: 14px;
+   font-size: 80%;
    color: $lynch;
 
 }
@@ -42,7 +42,7 @@ a:hover {
    MAINWRAPPER
 *************************************/
 #mainWrapper {
-   padding: 0 0 20px 0;
+
 }
 
 
@@ -78,9 +78,9 @@ a:hover {
 */
 #featured {
    position: relative;
-   padding: 150px 50px 120px 50px;
+   padding: 150px 50px 90px 50px;
    @include linear-gradient(rgba(8,104,172,1), rgba(8,64,129,1));
-   h3 {
+   h1 {
       color: $white;
    }
    #btn_wrapper {
@@ -100,7 +100,8 @@ a:hover {
       }
    }
    #infos_version {
-      color: $blueStrong;
+      margin-top: 30px;
+      color: $blueVeryStrong;
    }
 }
 
@@ -138,7 +139,36 @@ a:hover {
    text-align: center;
    padding: 15px;
    i {
-      font-size: 7em;
+      font-size: 5em;
       color: $blueRoyal;
+      margin-bottom: 20px;
    }
+   a {
+      padding: 10px 15px;
+      min-width: 100px;
+   }
+}
+
+
+/*************************************
+   COMPONENTS
+   -> Personnalisation
+
+*************************************/
+
+#components {
+   h2.title {
+      color: $blueRoyal;
+      margin-bottom: 35px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed $silver;
+   }
+}
+
+.show_box {
+   padding: 20px 40px;
+   border: 1px solid $silver;
+   background-color: $lightgray;
+   border-radius: 4px;
+   margin-bottom: 20px;
 }

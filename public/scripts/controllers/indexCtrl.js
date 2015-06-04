@@ -1,4 +1,9 @@
 controllers.controller('homeCtrl', ['$scope', '$rootScope', '$http',
 function ($scope, $rootScope, $http) {
-   console.log('test');
+
+}]);
+
+controllers.controller('componentsCtrl', ['$scope', '$rootScope', '$http',
+function ($scope, $rootScope, $http) {
+   console.log('components controller');
 }]);
