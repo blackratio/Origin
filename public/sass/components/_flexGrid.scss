@@ -92,7 +92,12 @@
 
 
 
-
+.flex {
+   display: flex;
+   .flexBasic {
+      flex: 1;
+   }
+}
 
 
 
@@ -100,9 +105,15 @@
 
    @include flexbox-wrapper(wrap, vertical, flex-start, stretch);
 
+}
+
+[flex-number="2"] {
    .flexItem {
-      @include flexbox-item-number(1.5%, 3);
+      @include flexbox-item-number(1.5%, 2);
    }
+}
+[flex-number="3"] {
+   @include flexbox-item-number(1.5%, 3);
 }
 
 [flex-direction="row"] {

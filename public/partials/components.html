@@ -1,31 +1,17 @@
-<header class="headerSection content_highLight align_left">
+<header class="headerSection content_lowLight">
    <div class="wrapp_box clearfix">
-      <h1>Components</h1>
+      <h1><span>Origin</span>Components</h1>
    </div>
 </header>
-
 <section class="content_section">
    <div class="wrapp_box clearfix">
-      <h2 class="title">Paragraph</h2>
-      <p>
-         Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.
-
-   Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
-      <div class="show_box">
-         <h1>Paragraph H1</h1>
-         <h2>Paragraph H2</h2>
-         <h3>Paragraph H3</h3>
-         <h4>Paragraph H4</h4>
-         <h5>Paragraph H5</h5>
-         <h6>Paragraph H6</h6>
-      </div>
-      <div class="show_box">
-         <h1>Paragraph H1</h1>
-         <h2>Paragraph H2</h2>
-         <h3>Paragraph H3</h3>
-         <h4>Paragraph H4</h4>
-         <h5>Paragraph H5</h5>
-         <h6>Paragraph H6</h6>
+      <div class="flex">
+         <div id="leftMenu" class="flexBasic">
+            <div class="fixThis" data-ng-include data-src="'partials/components_leftMenu.html'"></div>
+         </div>
+         <div id="page_content" class="flexBasic">
+            <div data-ng-include data-src="'partials/components/paragraph.html'"></div>
+         </div>
       </div>
    </div>
 </section>
