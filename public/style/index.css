@@ -10,7 +10,20 @@
 **********************************************************************************
 **********************************************************************************/
 /* RESET */
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/*********************************************************************
+**********************************************************************
+
+   | RESET
+
+      // Reset and normalisation
+
+      @ I use normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
+      @ Main Menu
+      @ Content Bloc
+      @ Buttons
+
+************************************************************************
+************************************************************************/
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS and IE text size adjust after device orientation change,
@@ -664,12 +677,10 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 80%;
   color: #6c7a89; }
-
-a {
-  color: #0c2538; }
-
-a:hover {
-  color: #4183d7; }
+  body a {
+    color: #0c2538; }
+  body a:hover {
+    color: #4183d7; }
 
 /************************************************
    -> Main Menu
@@ -714,14 +725,13 @@ a:hover {
   border-color: #6c7a89;
   color: #fefefe; }
 
-/*************************************
+/************************************************
+   -> Home Page Style
 
-   HOME STYLE
-
-*************************************/
-/****************
+*******************************************/
+/*********************************
    Featured
-*/
+************************/
 #featured {
   position: relative;
   padding: 150px 50px 90px 50px;
@@ -756,6 +766,9 @@ a:hover {
     margin-top: 30px;
     color: #061723; }
 
+/*********************************
+   Quick links
+************************/
 #content_links .wrapp_box {
   padding: 25px 50px; }
 #content_links ul a {
@@ -771,6 +784,9 @@ a:hover {
   background-color: #0c2538;
   color: #fefefe; }
 
+/*********************************
+   Item card
+************************/
 .item {
   text-align: center;
   padding: 15px; }
@@ -782,11 +798,11 @@ a:hover {
     padding: 10px 15px;
     min-width: 100px; }
 
-/*************************************
+/************************************************
    COMPONENTS
    -> Personnalisation
 
-*************************************/
+*******************************************/
 /****************
    Left Menu
 */
