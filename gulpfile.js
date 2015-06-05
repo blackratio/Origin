@@ -72,9 +72,9 @@ gulp.task('compress', function() {
 
 gulp.task('run', function() {
    livereload.listen();
-   gulp.watch('public/sass/**/*.scss', ['sass'])
-   gulp.watch('public/partials/**/*.html', ['html'])
-   gulp.watch('public/scripts/**/*.js', ['js'])
+   gulp.watch('public/sass/**/*.scss', ['sass']);
+   gulp.watch('public/partials/**/*.html', ['html']);
+   gulp.watch('public/scripts/**/*.js', ['js']);
    livereload.reload();
 });
 
