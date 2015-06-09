@@ -3,8 +3,8 @@ function ($scope, $rootScope, $http) {
 
 }]);
 
-controllers.controller('componentsCtrl', ['$scope', '$rootScope', '$http', '$timeout',
-function ($scope, $rootScope, $http, $timeout) {
+controllers.controller('componentsCtrl', ['$scope', '$rootScope', '$http', '$timeout', 'anchorSmoothScroll', '$location',
+function ($scope, $rootScope, $http, $timeout, anchorSmoothScroll, $location) {
 
    $timeout(function() {
       $(function(){
@@ -17,7 +17,19 @@ function ($scope, $rootScope, $http, $timeout) {
            }
          });
       });
+
    }, 100);
    console.log('components controller');
+
+   $scope.gotoElement = function (eID){
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+      //$location.hash('paragraph');
+
+      // call $anchorScroll()
+      anchorSmoothScroll.scrollTo(eID);
+      console.log(eID);
+
+    };
 
 }]);
