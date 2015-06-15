@@ -8,7 +8,7 @@ var controllers = angular.module('controllers', []);
 var directives = angular.module('directives', []);
 var lodash = angular.module('lodash', []);
 
-var CortexFramework = angular.module('CortexFramework', [
+var OriginFramework = angular.module('OriginFramework', [
    'services',
    'controllers',
    'directives',
@@ -17,7 +17,7 @@ var CortexFramework = angular.module('CortexFramework', [
 ]);
 
 
-CortexFramework.config(['$stateProvider', '$provide', '$urlRouterProvider', '$httpProvider', '$locationProvider', '$compileProvider',
+OriginFramework.config(['$stateProvider', '$provide', '$urlRouterProvider', '$httpProvider', '$locationProvider', '$compileProvider',
 function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $locationProvider, $compileProvider) {
 
    // Pour toute route inapproprié
@@ -76,7 +76,7 @@ function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $location
       views: {
          'main_content': {
             templateUrl: 'partials/gettingstarted.html',
-            controller: 'homeCtrl'
+            controller: 'gettingStartCtrl'
          }
       },
       data : {
@@ -104,7 +104,7 @@ function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $location
 }]);
 
 
-CortexFramework.run(['$rootScope', '$state', '$stateParams',
+OriginFramework.run(['$rootScope', '$state', '$stateParams',
 function ($rootScope, $state, $stateParams) {
 
    $rootScope.$state = $state;

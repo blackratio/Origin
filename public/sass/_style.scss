@@ -225,3 +225,18 @@ body {
    border-radius: 4px;
    margin-bottom: 20px;
 }
+
+
+.jplayerStyle {
+   display: block;
+   margin-bottom: 15px;
+}
+.speaker {
+   display: block;
+  width:48px;
+  height:48px;
+  background-image: url(http://www.stillonthehill.com/images/Play-grey.png);
+}
+.speaker.pause {
+  background-image: url(http://www.iconhot.com/icon/png/addictive-flavour/48/button-red-pause.png);
+}

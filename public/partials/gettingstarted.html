@@ -6,15 +6,11 @@
 
 <section class="content_section">
    <div class="wrapp_box clearfix">
-      <h3>First step : Installation</h3>
-      <p>Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.</p>
-      <p>Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
-<pre>
-<code>
-   $('#inputField').hide();
-   $('#inputField').hide();
-   .class { font-size: 2em; }
-</code>
-</pre>
+      <ul>
+         <li class="jplayerStyle" ng-repeat="play in list.data">
+            <span id="play">{{play.title}}</span>
+            <jplayer ng-if="play.content" class='speaker' data-audio="play.content.file" data-autoplay="false" data-pauseothers="true"></jplayer>
+         </li>
+      </ul>
    </div>
 </section>
