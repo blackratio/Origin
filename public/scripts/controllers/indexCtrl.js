@@ -50,9 +50,9 @@ function ($scope, $rootScope, $http, $timeout) {
             title : 'pas zen'
          },
          {
-            title : 'Robocop',
+            title : 'Mission Impossible',
             content : {
-               file: 'http://www.wav-sounds.com/movie/robocop.wav'
+               file: 'datas/music/missionimpossible.wav'
             }
          },
          {
@@ -80,7 +80,7 @@ function ($scope, $rootScope, $http, $timeout) {
 
 OriginFramework.run(function($rootScope) {
   $rootScope.audio1 = 'http://www.wav-sounds.com/movie/goodmorningvietnam.wav';
-  $rootScope.audio2 = 'http://www.w3schools.com/tags/horse.mp3';
+  $rootScope.audio2 = 'datas/music/missionimpossible.wav';
 });
 
 directives.directive('jplayer', function() {
@@ -99,6 +99,8 @@ directives.directive('jplayer', function() {
               swfPath: 'js/jplayer/',
               supplied: 'wav',
               solution: 'html, flash',
+              errorAlerts: false,
+    warningAlerts: false,
               preload: 'auto',
               wmode: 'window',
               ready: function () {
