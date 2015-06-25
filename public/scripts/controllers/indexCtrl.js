@@ -72,16 +72,7 @@ function ($scope, $rootScope, $http, $timeout) {
 
    $scope.list = myDatas;
 
-   console.log($scope.list);
-
-
-
 }]);
-
-OriginFramework.run(function($rootScope) {
-  $rootScope.audio1 = 'http://www.wav-sounds.com/movie/goodmorningvietnam.wav';
-  $rootScope.audio2 = 'datas/music/missionimpossible.wav';
-});
 
 directives.directive('jplayer', function() {
       return {
