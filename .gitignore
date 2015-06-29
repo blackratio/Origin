@@ -1,6 +1,4 @@
 node_modules
 public/libs
 public/style
-
-*.css
-*.css
+public/style/*.css
