@@ -7,6 +7,7 @@ var livereload = require('gulp-livereload');
 var uncss = require('gulp-uncss');
 var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
+var browserSync = require('browser-sync').create();
 
 
 ////////////////////////////////////////
@@ -22,9 +23,10 @@ gulp.task('sass', function () {
          //html: ['public/**/*.html']
       //}))
       .pipe(gulp.dest('public/style'))
-      .pipe(livereload({ start: true }))
+      //.pipe(livereload({ start: true }))
       //.pipe(notify({ message: 'SCSS to css task complete' }))
-      .pipe(plumber());
+      //.pipe(plumber());
+      .pipe(browserSync.stream());
 });
 
 
@@ -33,9 +35,10 @@ gulp.task('sass', function () {
 gulp.task('html', function() {
    gulp.src('public/**/*.html')
       //.pipe(gulp.dest(''))
-      .pipe(livereload({ start: true }))
+      //.pipe(livereload({ start: true }))
       //.pipe(notify({ message: 'HTML task complete' }))
-      .pipe(plumber());
+      //.pipe(plumber());
+      .pipe(browserSync.stream());
 });
 
 
@@ -43,9 +46,10 @@ gulp.task('html', function() {
 
 gulp.task('js', function() {
    gulp.src('public/scripts/**/*.js')
-      .pipe(livereload({ start: true }))
+      //.pipe(livereload({ start: true }))
       //.pipe(notify({ message: 'JS task complete' }))
-      .pipe(plumber());
+      //.pipe(plumber());
+      .pipe(browserSync.stream());
 });
 
 
@@ -71,11 +75,14 @@ gulp.task('compress', function() {
 // Development
 
 gulp.task('run', function() {
-   livereload.listen();
+   //livereload.listen();
+   browserSync.init({
+        server: "./public"
+    });
    gulp.watch('public/sass/**/*.scss', ['sass']);
    gulp.watch('public/partials/**/*.html', ['html']);
    gulp.watch('public/scripts/**/*.js', ['js']);
-   livereload.reload();
+   //livereload.reload();
 });
 
 
