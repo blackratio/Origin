@@ -26,8 +26,7 @@ gulp.task('sass', function () {
       //.pipe(livereload({ start: true }))
       //.pipe(notify({ message: 'SCSS to css task complete' }))
       //.pipe(plumber());
-      .pipe(browserSync.stream())
-      .browserSync.notify("SCSS compiled", 1000);
+      .pipe(browserSync.stream());
 });
 
 
