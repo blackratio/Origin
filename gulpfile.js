@@ -23,7 +23,7 @@ gulp.task('sass', function () {
       //}))
       .pipe(gulp.dest('public/style'))
       .pipe(livereload({ start: true }))
-      .pipe(notify({ message: 'SCSS to css task complete' }))
+      //.pipe(notify({ message: 'SCSS to css task complete' }))
       .pipe(plumber());
 });
 
@@ -34,7 +34,7 @@ gulp.task('html', function() {
    gulp.src('public/**/*.html')
       //.pipe(gulp.dest(''))
       .pipe(livereload({ start: true }))
-      .pipe(notify({ message: 'HTML task complete' }))
+      //.pipe(notify({ message: 'HTML task complete' }))
       .pipe(plumber());
 });
 
@@ -44,7 +44,7 @@ gulp.task('html', function() {
 gulp.task('js', function() {
    gulp.src('public/scripts/**/*.js')
       .pipe(livereload({ start: true }))
-      .pipe(notify({ message: 'JS task complete' }))
+      //.pipe(notify({ message: 'JS task complete' }))
       .pipe(plumber());
 });
 
