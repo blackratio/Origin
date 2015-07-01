@@ -1,76 +1,74 @@
 var gulp = require('gulp');
-var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
-var livereload = require('gulp-livereload');
 var uncss = require('gulp-uncss');
 var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
+var babel = require("gulp-babel");
 
 
 ////////////////////////////////////////
-   // Development
+// Development
 ////////////////////////////////////////
 
 // SCSS -> CSS Tasks
 
 gulp.task('sass', function () {
    gulp.src('public/sass/**/*.scss')
-      .pipe(sass())
-      //.pipe(uncss({
-         //html: ['public/**/*.html']
-      //}))
-      .pipe(gulp.dest('public/style'))
-      .pipe(browserSync.stream());
+   .pipe(sass())
+   //.pipe(uncss({
+   //html: ['public/**/*.html']
+   //}))
+   .pipe(gulp.dest('public/style'));
 });
 
 
 // HTML tasks
 
 gulp.task('html', function() {
-   gulp.src('public/**/*.html')
-      .pipe(browserSync.stream());
+   gulp.src('public/**/*.html');
+
 });
 
 
 // JS tasks
 
 gulp.task('js', function() {
-   gulp.src('public/scripts/**/*.js')
-      .pipe(browserSync.stream());
+   gulp.src('public/scripts/**/*.js');
+
 });
 
 
 ////////////////////////////////////////
-   // Production
+// Production
 ////////////////////////////////////////
 
 // concat & minify JS files
 
 gulp.task('compress', function() {
    return gulp.src('public/js/**/*.js')
-      .pipe(concat('allScript.js'))
-      .pipe(uglify())
-      .pipe(gulp.dest('public/dist/js/'));
+   .pipe(concat('allScript.js'))
+   .pipe(uglify())
+   .pipe(gulp.dest('public/dist/js/'));
 });
 
 
 
 ////////////////////////////////////////
-   // ACTIONS
+// ACTIONS
 ////////////////////////////////////////
 
 // Development
 
 gulp.task('dev', function() {
    browserSync.init({
-        server: "./public"
-    });
-   gulp.watch('public/sass/**/*.scss', ['sass']);
-   gulp.watch('public/partials/**/*.html', ['html']);
-   gulp.watch('public/scripts/**/*.js', ['js']);
+      server: "./public"
+   });
+   gulp.watch('public/sass/**/*.scss', ['sass']).on('change', browserSync.reload);
+   gulp.watch('public/partials/**/*.html', ['html']).on('change', browserSync.reload);
+   gulp.watch('public/scripts/**/*.js', ['js']).on('change', browserSync.reload);
 });
 
 
