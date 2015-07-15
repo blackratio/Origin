@@ -7,9 +7,8 @@ directives.directive('waveSurfer', function() {
       var wavesurfer = Object.create(WaveSurfer);
       wavesurfer.init({
          container: '#wave',
-         waveColor: 'violet',
-         progressColor: 'purple',
-         splitChannels: true
+         waveColor: '#ccc',
+         progressColor: '#333'
       });
 
       // Play/pause
