@@ -1,7 +1,7 @@
 directives.directive('waveSurfer', function() {
    return {
       restrict: 'E',
-      template: '<div id="wave"></div>',
+      templateUrl: 'partials/directives/wavesurfer.html',
       link: link
    };
 

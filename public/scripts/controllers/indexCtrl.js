@@ -36,7 +36,6 @@ function ($scope, $rootScope, $http, $timeout, anchorSmoothScroll, $location) {
 controllers.controller('gettingStartCtrl', ['$scope', '$rootScope', '$http', '$timeout',
 function ($scope, $rootScope, $http, $timeout) {
 
-
    var myDatas = {
       data : [
          {
