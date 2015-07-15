@@ -6,6 +6,18 @@
 
 <section class="content_section">
    <div class="wrapp_box clearfix">
+      <wave-surfer></wave-surfer>
+      <div class="controls">
+         <button class="btn btn-primary" data-action="play">
+            <i class="glyphicon glyphicon-play"></i>Play/
+            <i class="glyphicon glyphicon-pause"></i>Pause
+         </button>
+      </div>
+   </div>
+</section>
+
+<section class="content_section">
+   <div class="wrapp_box clearfix">
       <ul>
          <li class="jplayerStyle" ng-repeat="play in list.data">
             <span id="play">{{play.title}}</span>

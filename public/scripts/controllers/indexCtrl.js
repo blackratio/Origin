@@ -19,7 +19,6 @@ function ($scope, $rootScope, $http, $timeout, anchorSmoothScroll, $location) {
       });
 
    }, 100);
-   console.log('components controller');
 
    $scope.gotoElement = function (eID){
       // set the location.hash to the id of
@@ -36,7 +35,7 @@ function ($scope, $rootScope, $http, $timeout, anchorSmoothScroll, $location) {
 
 controllers.controller('gettingStartCtrl', ['$scope', '$rootScope', '$http', '$timeout',
 function ($scope, $rootScope, $http, $timeout) {
-   console.log('jplayer test');
+
 
    var myDatas = {
       data : [
