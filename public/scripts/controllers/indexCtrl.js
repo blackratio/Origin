@@ -50,7 +50,7 @@ function ($scope, $rootScope, $http, $timeout) {
          {
             title : 'Mission Impossible',
             content : {
-               file: 'datas/music/missionimpossible.wav'
+               file: 'datas/music/Ghost-Cirice.mp3'
             }
          },
          {
