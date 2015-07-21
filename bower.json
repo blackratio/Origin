@@ -29,7 +29,7 @@
       "lodash": "3.9.3",
       "angular": "1.4.3",
       "angular-resource": "1.4.3",
-      "angular-ui-router": "0.2.13",
+      "angular-ui-router": "0.2.15",
       "fontawesome": "4.3.0",
       "jplayer": "2.9.2",
       "wavesurfer.js": "1.0.29"
