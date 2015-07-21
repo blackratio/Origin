@@ -1,6 +1,5 @@
 node_modules
 public/libs
-public/style
 public/style/*.css
 
 *.log

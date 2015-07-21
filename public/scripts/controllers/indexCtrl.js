@@ -90,7 +90,7 @@ directives.directive('jplayer', function() {
               solution: 'html, flash',
               errorAlerts: false,
     warningAlerts: false,
-              preload: 'auto',
+              preload: 'none',
               wmode: 'window',
               ready: function () {
                 $player
