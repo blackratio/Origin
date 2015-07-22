@@ -30,6 +30,7 @@
       "angular": "1.4.3",
       "angular-resource": "1.4.3",
       "angular-ui-router": "0.2.15",
+      "ngstorage": "0.3.7",
       "fontawesome": "4.3.0",
       "jplayer": "2.9.2",
       "wavesurfer.js": "1.0.29",

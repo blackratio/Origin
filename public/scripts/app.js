@@ -13,7 +13,8 @@ var OriginFramework = angular.module('OriginFramework', [
    'controllers',
    'directives',
    'ui.router',
-   'lodash'
+   'lodash',
+   'ngStorage'
 ]);
 
 
