@@ -1,8 +1,9 @@
-directives.directive('waveSurfer', function($timeout) {
+directives.directive('waveSurfer', function($timeout, $localStorage) {
 
    function link( scope, element, attributes, controller ) {
 
       var datas = scope.list.data;
+      var localRegions = scope.localRegions;
 
       var wavesurfer = WaveSurfer.create({
          container: '#wave',
@@ -14,101 +15,52 @@ directives.directive('waveSurfer', function($timeout) {
          minimap: true
       });
 
+      var colors = 'rgba(0,0,0,0.7)';
+      /* Regions */
+      wavesurfer.enableDragSelection({
+         color: colors
+      });
+
+
       // When Wavesurfer is Ready
       wavesurfer.on('ready', function () {
 
          // Initialze Timeline
          var timeline = Object.create(WaveSurfer.Timeline);
 
-         // Initialze Equalizer
-         var EQ = [
-            {
-               f: 32,
-               type: 'lowshelf'
-            },
-            {
-               f: 64,
-               type: 'peaking'
-            },
-            {
-               f: 125,
-               type: 'peaking'
-            },
-            {
-               f: 250,
-               type: 'peaking'
-            },
-            {
-               f: 500,
-               type: 'peaking'
-            },
-            {
-               f: 1000,
-               type: 'peaking'
-            },
-            {
-               f: 2000,
-               type: 'peaking'
-            },
-            {
-               f: 4000,
-               type: 'peaking'
-            },
-            {
-               f: 8000,
-               type: 'peaking'
-            },
-            {
-               f: 16000,
-               type: 'highshelf'
-            }
-         ];
-
-         // Create filters
-         var filters = EQ.map(function (band) {
-            var filter = wavesurfer.backend.ac.createBiquadFilter();
-            filter.type = band.type;
-            filter.gain.value = 0;
-            filter.Q.value = 1;
-            filter.frequency.value = band.f;
-            return filter;
+         timeline.init({
+            wavesurfer: wavesurfer,
+            container: '#wave-timeline'
          });
 
-         // Connect filters to wavesurfer
-         wavesurfer.backend.setFilters(filters);
+         // REGIONS
+         //
+         // Load region from localStorage
+         // If no region -> load from other source
 
-         // Bind filters to vertical range sliders
-         var container = document.querySelector('#equalizer');
+         if (localRegions.regions) {
+            loadRegions(localRegions.regions);
+         }
 
-         filters.forEach(function (filter) {
-            var input = document.createElement('input');
-            wavesurfer.util.extend(input, {
-               type: 'range',
-               min: -40,
-               max: 40,
-               value: 0,
-               title: filter.frequency.value
-            });
-            input.style.display = 'inline-block';
-            input.setAttribute('orient', 'vertical');
-            wavesurfer.drawer.style(input, {
-               'webkitAppearance': 'slider-vertical',
-               width: '50px',
-               height: '150px'
-            });
-            container.appendChild(input);
 
-            var onChange = function (e) {
-               filter.gain.value = ~~e.target.value;
-            };
+      });
 
-            input.addEventListener('input', onChange);
-            input.addEventListener('change', onChange);
+
+      wavesurfer.on('region-click', function (region, e) {
+         e.stopPropagation();
+         // Play on click, loop on shift click
+         //e.shiftKey ? region.playLoop() : region.play();
+      });
+      wavesurfer.on('region-click', editAnnotation);
+      wavesurfer.on('region-updated', saveRegions);
+      wavesurfer.on('region-removed', saveRegions);
+      wavesurfer.on('region-in', showNote);
+
+      wavesurfer.on('region-play', function (region) {
+         region.once('out', function () {
+            wavesurfer.play(region.start);
+            wavesurfer.pause();
          });
-
-        // For debugging
-        wavesurfer.filters = filters;
-
       });
 
       // Play/pause
@@ -137,6 +89,188 @@ directives.directive('waveSurfer', function($timeout) {
          wavesurfer.on('destroy', hideProgress);
          wavesurfer.on('error', hideProgress);
       }());
+
+
+
+
+
+
+
+
+
+      /**
+ * Save annotations to localStorage.
+ */
+function saveRegions() {
+    localRegions.regions =
+
+        Object.keys(wavesurfer.regions.list).map(function (id) {
+            var region = wavesurfer.regions.list[id];
+            return {
+                start: region.start,
+                end: region.end,
+                data: region.data
+            };
+        });
+
+
+}
+
+
+/**
+ * Load regions from localStorage.
+ */
+function loadRegions(regions) {
+    regions.forEach(function (region) {
+        region.color = randomColor(0.1);
+        wavesurfer.addRegion(region);
+    });
+}
+
+
+/**
+ * Extract regions separated by silence.
+ */
+function extractRegions(peaks, duration) {
+    // Silence params
+    var minValue = 0.0015;
+    var minSeconds = 0.25;
+
+    var length = peaks.length;
+    var coef = duration / length;
+    var minLen = minSeconds / coef;
+
+    // Gather silence indeces
+    var silences = [];
+    Array.prototype.forEach.call(peaks, function (val, index) {
+        if (val < minValue) {
+            silences.push(index);
+        }
+    });
+
+    // Cluster silence values
+    var clusters = [];
+    silences.forEach(function (val, index) {
+        if (clusters.length && val == silences[index - 1] + 1) {
+            clusters[clusters.length - 1].push(val);
+        } else {
+            clusters.push([ val ]);
+        }
+    });
+
+    // Filter silence clusters by minimum length
+    var fClusters = clusters.filter(function (cluster) {
+        return cluster.length >= minLen;
+    });
+
+    // Create regions on the edges of silences
+    var regions = fClusters.map(function (cluster, index) {
+        var next = fClusters[index + 1];
+        return {
+            start: cluster[cluster.length - 1],
+            end: (next ? next[0] : length - 1)
+        };
+    });
+
+    // Add an initial region if the audio doesn't start with silence
+    var firstCluster = fClusters[0];
+    if (firstCluster && firstCluster[0] !== 0) {
+        regions.unshift({
+            start: 0,
+            end: firstCluster[firstCluster.length - 1]
+        });
+    }
+
+    // Filter regions by minimum length
+    var fRegions = regions.filter(function (reg) {
+        return reg.end - reg.start >= minLen;
+    });
+
+    // Return time-based regions
+    return fRegions.map(function (reg) {
+        return {
+            start: Math.round(reg.start * coef * 10) / 10,
+            end: Math.round(reg.end * coef * 10) / 10
+        };
+    });
+}
+
+
+/**
+ * Random RGBA color.
+ */
+function randomColor(alpha) {
+    return 'rgba(' + [
+        ~~(Math.random() * 255),
+        ~~(Math.random() * 255),
+        ~~(Math.random() * 255),
+        alpha || 1
+    ] + ')';
+
+}
+
+
+/**
+ * Edit annotation for a region.
+ */
+ function editAnnotation (region) {
+    var form = document.forms.edit;
+    form.style.opacity = 1;
+    form.elements.start.value = Math.round(region.start * 10) / 10,
+    form.elements.end.value = Math.round(region.end * 10) / 10;
+    form.elements.note.value = region.data.note || '';
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        region.update({
+            start: form.elements.start.value,
+            end: form.elements.end.value,
+            data: {
+                note: form.elements.note.value
+            }
+        });
+        form.style.opacity = 0;
+    };
+    form.onreset = function () {
+        form.style.opacity = 0;
+        form.dataset.region = null;
+    };
+    form.dataset.region = region.id;
+}
+
+
+
+/**
+ * Display annotation.
+ */
+ function showNote (region) {
+     if (!showNote.el) {
+         showNote.el = document.querySelector('#subtitle');
+     }
+     showNote.el.textContent = region.data.note || '–';
+ }
+
+
+var deleteA = document.querySelector('[data-action="delete-region"]');
+deleteA.addEventListener('click', function () {
+
+    var form = document.forms.edit;
+    var regionId = form.dataset.region;
+    if (regionId) {
+        wavesurfer.regions.list[regionId].remove();
+        form.reset();
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
 
    }
 

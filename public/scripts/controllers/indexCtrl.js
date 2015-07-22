@@ -33,8 +33,14 @@ function ($scope, $rootScope, $http, $timeout, anchorSmoothScroll, $location) {
 
 }]);
 
-controllers.controller('gettingStartCtrl', ['$scope', '$rootScope', '$http', '$timeout',
-function ($scope, $rootScope, $http, $timeout) {
+controllers.controller('gettingStartCtrl', ['$scope', '$rootScope', '$http', '$timeout', '$localStorage',
+function ($scope, $rootScope, $http, $timeout, $localStorage) {
+   if ($localStorage.regions == undefined) {
+      $localStorage.regions = [];
+   }
+
+   $scope.localRegions = $localStorage;
+   console.log($scope.localRegions);
 
    var myDatas = {
       data : [
