@@ -185,7 +185,6 @@ directives.directive('waveSurfer', function($timeout, $localStorage) {
          });
       }
 
-
       /**
        * Edit annotation for a region.
        */
