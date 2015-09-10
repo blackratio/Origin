@@ -23,10 +23,10 @@ body {
    font-size: 80%;
    color: $lynch;
    a {
-      color: $blueStrong;
+      color: $purple;
    }
    a:hover {
-      color: $blueRoyal;
+      color: $edward;
    }
 }
 
@@ -41,8 +41,14 @@ body {
    top: 0;
    left: 0;
    width: 100%;
-   padding: 15px 20px;
+   padding: 5px 10px;
    background-color: rgba(255, 255, 255, 1);
+   ul.left {
+      li, a {
+         margin: 0 !important;
+         padding: 0;
+      }
+   }
    ul {
       li:last-child {
          margin-left: 20px;
@@ -72,16 +78,24 @@ body {
 *******************************************/
 
 .btn {
-   background-color: $blueStrong;
+   background-color: $red;
    color: $white;
 }
 .btn:hover {
-   background-color: $blueRoyal;
+   background-color: $redStrong;
    color: $white;
 }
 .btn_outline {
    border-color: $lynch;
    color: $lynch;
+}
+.btn.btn_light {
+   background-color: $white;
+   color: $purple;
+}
+.btn.btn_light:hover {
+   background-color: $purple;
+   color: $white;
 }
 .btn_outline:hover {
    background-color: $lynch !important;
@@ -103,14 +117,14 @@ body {
 
 #featured {
    position: relative;
-   padding: 100px 50px 50px 50px;
+   padding: 70px 50px 50px 50px;
    //@include linear-gradient(rgba(8,104,172,1), rgba(8,64,129,1));
-   @include linear-gradient($silver, $lynch);
+   @include linear-gradient($purple, $purple);
    h2 {
       color: $white;
    }
    #btn_wrapper {
-      margin-top: 70px;
+      margin-top: 40px;
       .btn {
          margin: 0 10px;
       }
@@ -122,12 +136,12 @@ body {
       .btn_outline:hover {
          background-color: $white !important;
          border-color: $white;
-         color: $blueStrong;
+         color: $purple;
       }
    }
    #infos_version {
       margin-top: 30px;
-      color: $black;
+      color: $white;
    }
 }
 
@@ -142,7 +156,7 @@ body {
    }
    ul {
       a {
-         color: $blueRoyal;
+         color: $purpleLight;
          padding: 5px 20px;
       }
       a:hover {
@@ -155,7 +169,7 @@ body {
 }
 
 .content_highLight {
-   background-color: $blueStrong;
+   background-color: $purpleStrong;
    color: $white;
 }
 
@@ -169,7 +183,7 @@ body {
    padding: 15px;
    i {
       font-size: 5em;
-      color: $blueRoyal;
+      color: $edward;
       margin-bottom: 20px;
    }
    a {
@@ -201,7 +215,7 @@ body {
    }
    a:hover {
       padding: 5px 0 5px 3px;
-      color: $blueRoyal;
+      color: $edward;
    }
 }
 
@@ -218,26 +232,4 @@ body {
    p {
       margin-bottom: 30px;
    }
-}
-
-.show_box {
-   padding: 10px 20px;
-   border: 1px solid $porcelain;
-   border-radius: 4px;
-   margin-bottom: 20px;
-}
-
-
-.jplayerStyle {
-   display: block;
-   margin-bottom: 15px;
-}
-.speaker {
-   display: block;
-  width:48px;
-  height:48px;
-  background-image: url(http://www.stillonthehill.com/images/Play-grey.png);
-}
-.speaker.pause {
-  background-image: url(http://www.iconhot.com/icon/png/addictive-flavour/48/button-red-pause.png);
 }
