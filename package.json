@@ -1,19 +1,30 @@
 {
-   "name": "Origin-Framework-Server ",
-   "main": "server.js",
-   "dependencies": {
-      "express": "~4.12.3",
-      "body-parser": "~1.12.3",
-      "nodemon": "~1.3.7",
-      "gulp": "latest",
-      "gulp-concat": "latest",
-      "gulp-uglify": "latest",
-      "gulp-sass": "latest",
-      "gulp-babel": "latest",
-      "browser-sync": "latest",
-      "gulp-uncss": "latest",
-      "gulp-notify": "latest",
-      "gulp-plumber": "latest",
-      "angular": "latest"
-   }
+  "name": "Origin-Framework-Server ",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.12.3",
+    "body-parser": "~1.12.3",
+    "nodemon": "~1.3.7",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-uglify": "latest",
+    "gulp-sass": "latest",
+    "gulp-babel": "latest",
+    "browser-sync": "latest",
+    "gulp-uncss": "latest",
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "angular": "latest",
+    "karma": "latest",
+    "karma-mocha": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "karma-chai": "latest"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-opera-launcher": "^0.3.0",
+    "karma-safari-launcher": "^0.1.1"
+  }
 }

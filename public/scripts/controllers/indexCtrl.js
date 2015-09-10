@@ -9,12 +9,12 @@ function ($scope, $rootScope, $http, $timeout, anchorSmoothScroll, $location) {
    $timeout(function() {
       $(function(){
          $(window).scroll(function() {
-           if ($(this).scrollTop() >= 30) {
+            if ($(this).scrollTop() >= 30) {
                $('.fixThis').addClass('stickytop');
-           }
-           else if ($(this).scrollTop() <= 100) {
+            }
+            else if ($(this).scrollTop() <= 100) {
                $('.fixThis').removeClass('stickytop');
-           }
+            }
          });
       });
 
@@ -29,7 +29,7 @@ function ($scope, $rootScope, $http, $timeout, anchorSmoothScroll, $location) {
       anchorSmoothScroll.scrollTo(eID);
       console.log(eID);
 
-    };
+   };
 
 }]);
 
@@ -79,55 +79,69 @@ function ($scope, $rootScope, $http, $timeout, $localStorage) {
 }]);
 
 directives.directive('jplayer', function() {
-      return {
-        restrict: 'EA',
-        template: '<div></div>',
-        link: function(scope, element, attrs) {
-          var $control = element,
-              $player = $control.children('div'),
-              cls = 'pause';
+   return {
+      restrict: 'EA',
+      template: '<div></div>',
+      link: function(scope, element, attrs) {
+         var $control = element,
+         $player = $control.children('div'),
+         cls = 'pause';
 
-          var updatePlayer = function() {
+         var updatePlayer = function() {
             $player.jPlayer({
-              // Flash fallback for outdated browser not supporting HTML5 audio/video tags
-              // http://jplayer.org/download/
-              swfPath: 'js/jplayer/',
-              supplied: 'wav',
-              solution: 'html, flash',
-              errorAlerts: false,
-    warningAlerts: false,
-              preload: 'none',
-              wmode: 'window',
-              ready: function () {
-                $player
+               // Flash fallback for outdated browser not supporting HTML5 audio/video tags
+               // http://jplayer.org/download/
+               swfPath: 'js/jplayer/',
+               supplied: 'wav',
+               solution: 'html, flash',
+               errorAlerts: false,
+               warningAlerts: false,
+               preload: 'none',
+               wmode: 'window',
+               ready: function () {
+                  $player
                   .jPlayer("setMedia", {wav: scope.$eval(attrs.audio)})
                   .jPlayer(attrs.autoplay === 'true' ? 'play' : 'stop');
-              },
-              play: function() {
-                $control.addClass(cls);
+               },
+               play: function() {
+                  $control.addClass(cls);
 
-                if (attrs.pauseothers === 'true') {
-                  $player.jPlayer('pauseOthers');
-                }
-              },
-              pause: function() {
-                $control.removeClass(cls);
-              },
-              stop: function() {
-                $control.removeClass(cls);
-              },
-              ended: function() {
-                $control.removeClass(cls);
-              }
+                  if (attrs.pauseothers === 'true') {
+                     $player.jPlayer('pauseOthers');
+                  }
+               },
+               pause: function() {
+                  $control.removeClass(cls);
+               },
+               stop: function() {
+                  $control.removeClass(cls);
+               },
+               ended: function() {
+                  $control.removeClass(cls);
+               }
             })
             .end()
             .unbind('click').click(function(e) {
-              $player.jPlayer($control.hasClass(cls) ? 'stop' : 'play');
+               $player.jPlayer($control.hasClass(cls) ? 'stop' : 'play');
             });
-          };
+         };
 
-          scope.$watch(attrs.audio, updatePlayer);
-          updatePlayer();
-        }
+         scope.$watch(attrs.audio, updatePlayer);
+         updatePlayer();
+      }
+   };
+});
+
+controllers.controller('MyController', ['$scope', '$rootScope', '$http',
+function ($scope, $rootScope, $http) {
+      var self = this;
+
+      self.firstName = '';
+      self.lastName = '';
+
+      self.getFullName = function(){
+         return self.firstName + ' ' + self.lastName;
       };
- });
+
+      return self;
+}]);
