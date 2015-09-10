@@ -103,9 +103,10 @@ body {
 
 #featured {
    position: relative;
-   padding: 150px 50px 90px 50px;
-   @include linear-gradient(rgba(8,104,172,1), rgba(8,64,129,1));
-   h1 {
+   padding: 100px 50px 50px 50px;
+   //@include linear-gradient(rgba(8,104,172,1), rgba(8,64,129,1));
+   @include linear-gradient($silver, $lynch);
+   h2 {
       color: $white;
    }
    #btn_wrapper {
@@ -126,7 +127,7 @@ body {
    }
    #infos_version {
       margin-top: 30px;
-      color: $blueVeryStrong;
+      color: $black;
    }
 }
 
