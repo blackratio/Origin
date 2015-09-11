@@ -6,6 +6,7 @@ function strictMode() {
 var services = angular.module('services', []);
 var controllers = angular.module('controllers', []);
 var directives = angular.module('directives', []);
+var ngStorage = angular.module('ngStorage', []);
 var lodash = angular.module('lodash', []);
 
 var OriginFramework = angular.module('OriginFramework', [
@@ -14,8 +15,7 @@ var OriginFramework = angular.module('OriginFramework', [
    'directives',
    'ui.router',
    'lodash',
-   'ngStorage',
-   'my-module'
+   'ngStorage'
 ]);
 
 

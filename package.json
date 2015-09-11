@@ -18,13 +18,11 @@
     "karma": "latest",
     "karma-mocha": "latest",
     "karma-phantomjs-launcher": "latest",
-    "karma-chai": "latest"
+    "karma-chai": "latest",
+    "karma-jasmine": "latest"
   },
   "devDependencies": {
     "karma-chrome-launcher": "^0.2.0",
-    "karma-firefox-launcher": "^0.1.6",
-    "karma-ie-launcher": "^0.2.0",
-    "karma-opera-launcher": "^0.3.0",
     "karma-safari-launcher": "^0.1.1"
   }
 }

@@ -132,16 +132,12 @@ directives.directive('jplayer', function() {
    };
 });
 
-controllers.controller('MyController', ['$scope', '$rootScope', '$http',
-function ($scope, $rootScope, $http) {
-      var self = this;
+controllers.controller('MyController', ['$scope',
+function ($scope) {
 
-      self.firstName = '';
-      self.lastName = '';
+   $scope.name = "Ari";
+   $scope.sayHello = function() {
+      $scope.greeting = "Hello " + $scope.name;
+   };
 
-      self.getFullName = function(){
-         return self.firstName + ' ' + self.lastName;
-      };
-
-      return self;
 }]);
