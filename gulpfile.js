@@ -7,7 +7,15 @@ var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 var babel = require("gulp-babel");
+var karmaServer = require('karma').Server;
 
+
+gulp.task('test', function (){
+    new karmaServer({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: false
+    }).start();
+});
 
 ////////////////////////////////////////
 // Development

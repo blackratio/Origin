@@ -21,7 +21,7 @@ var OriginFramework = angular.module('OriginFramework', [
 
 OriginFramework.config(['$stateProvider', '$provide', '$urlRouterProvider', '$httpProvider', '$locationProvider', '$compileProvider',
 function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $locationProvider, $compileProvider) {
-
+"use strict";
    // Pour toute route inapproprié
    $urlRouterProvider.otherwise('/');
 

@@ -14,15 +14,18 @@
     "gulp-uncss": "latest",
     "gulp-notify": "latest",
     "gulp-plumber": "latest",
-    "angular": "latest",
-    "karma": "latest",
-    "karma-mocha": "latest",
-    "karma-phantomjs-launcher": "latest",
-    "karma-chai": "latest",
-    "karma-jasmine": "latest"
+    "angular": "latest"
   },
   "devDependencies": {
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-safari-launcher": "^0.1.1"
+    "gulp-karma": "0.0.4",
+    "karma": "latest",
+    "karma-chai": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-coverage": "latest",
+    "karma-jasmine": "latest",
+    "karma-jshint-preprocessor": "0.0.5",
+    "karma-mocha": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "karma-safari-launcher": "latest"
   }
 }

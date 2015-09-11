@@ -29,16 +29,47 @@ module.exports = function(config) {
       ],
 
 
+      // add to list of reporters
+      reporters: ['progress', 'coverage'],
+
+
+      // add to list of plugins
+      plugins: [
+      'karma-coverage',
+      'karma-jasmine',
+      'karma-phantomjs-launcher',
+      'karma-chrome-launcher',
+      'karma-jshint-preprocessor'
+      ],
+
       // preprocess matching files before serving them to the browser
       // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       preprocessors: {
+         'public/scripts/controllers/*.js': ['jshint', 'coverage'],
+         'public/scripts/services/*.js': ['jshint', 'coverage'],
+         'public/scripts/app.js': ['jshint', 'coverage']
       },
 
+      // add plugin settings
+      coverageReporter: {
+        // type of file to output, use text to output to console
+        type : 'text',
+        // directory where coverage results are saved
+        dir: 'test/coverage/'
+        // if type is text or text-summary, you can set the file name
+        // file: 'coverage.txt'
+     },
+
+     // add plugin settings
+      junitReporter: {
+        // location of results output file
+        outputFile: 'test/junit-results.xml'
+      },
 
       // test results reporter to use
       // possible values: 'dots', 'progress'
       // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-      reporters: ['progress'],
+      //reporters: ['progress'],
 
 
       // web server port
