@@ -1,4 +1,4 @@
-describe('Unit: homeCtrl', function() {
+describe('Unit: gettingStartCtrl', function() {
   // Load the module with MainController
   beforeEach(module('OriginFramework'));
 
@@ -9,7 +9,7 @@ describe('Unit: homeCtrl', function() {
     // Create a new scope that's a child of the $rootScope
     scope = $rootScope.$new();
     // Create the controller
-    ctrl = $controller('homeCtrl', {
+    ctrl = $controller('gettingStartCtrl', {
       $scope: scope
     });
   }));
@@ -18,11 +18,11 @@ describe('Unit: homeCtrl', function() {
     function() {
       expect(scope.greeting).toBeUndefined();
       scope.sayHello();
-      expect(scope.greeting).toEqual("Hello Daphné");
+      expect(scope.greeting).toEqual("Hello David");
   });
 });
 
-describe('Unit: componentsCtrl', function() {
+describe('Unit: MyController', function() {
   // Load the module with MainController
   beforeEach(module('OriginFramework'));
 
@@ -33,7 +33,7 @@ describe('Unit: componentsCtrl', function() {
     // Create a new scope that's a child of the $rootScope
     scope = $rootScope.$new();
     // Create the controller
-    ctrl = $controller('componentsCtrl', {
+    ctrl = $controller('MyController', {
       $scope: scope
     });
   }));
@@ -42,6 +42,6 @@ describe('Unit: componentsCtrl', function() {
     function() {
       expect(scope.greeting).toBeUndefined();
       scope.sayHello();
-      expect(scope.greeting).toEqual("Hello Raphael");
+      expect(scope.greeting).toEqual("Hello Sydney");
   });
 });
