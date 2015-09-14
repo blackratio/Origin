@@ -26,8 +26,12 @@ body {
       color: $purple;
    }
    a:hover {
-      color: $edward;
+      color: $purpleStrong;
    }
+}
+pre {
+   padding: 15px !important;
+   border-radius: 4px;
 }
 
 
@@ -49,16 +53,21 @@ body {
          padding: 0;
       }
    }
-   ul {
+   .menu {
       li:last-child {
          margin-left: 20px;
       }
-      a {
-         font-weight: 600;
-         height: 40px;
-         line-height: 40px;
-         padding: 0 10px;
-         font-size: 1.2em;
+      li {
+         a {
+            font-weight: 600;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 10px;
+            font-size: 1.2em;
+         }
+         i {
+            margin-right: 10px;
+         }
       }
    }
 }
