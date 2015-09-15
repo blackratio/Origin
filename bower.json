@@ -34,7 +34,9 @@
       "fontawesome": "4.4.0",
       "jplayer": "2.9.2",
       "wavesurfer.js": "1.0.29",
-      "d3": "3.5.6"
+      "d3": "3.5.6",
+      "firebase": "2.2.9",
+      "angularfire": "1.1.2"
    },
    "devDependencies": {
       "angular-mocks": "1.4.5",
