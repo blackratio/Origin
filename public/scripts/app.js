@@ -68,38 +68,38 @@ function ($stateProvider, $provide, $urlRouterProvider, $httpProvider, $location
       },
       data : {
          mainSection: 'framework',
-         pageTitle: 'Origin Framework Home',
+         pageTitle: 'Welcome - Origin',
          section: 'home'
       }
    })
 
-   .state('gettingstarted', {
-      url: '/gettingstarted',
+   .state('getStarted', {
+      url: '/getStarted',
       views: {
          'main_content': {
-            templateUrl: 'partials/gettingstarted.html',
-            controller: 'gettingStartCtrl'
+            templateUrl: 'partials/getstarted/index.html',
+            controller: 'getStartedCtrl'
          }
       },
       data : {
          mainSection: 'framework',
-         pageTitle: 'Origin Framework Getting Started',
-         section: 'gettingStarted'
+         pageTitle: 'Get Origin & installation guideline',
+         section: 'getStarted'
       }
    })
 
-   .state('components', {
-      url: '/components',
+   .state('docs', {
+      url: '/docs',
       views: {
          'main_content': {
-            templateUrl: 'partials/components.html',
+            templateUrl: 'partials/docs/index.html',
             controller: 'componentsCtrl'
          }
       },
       data : {
          mainSection: 'framework',
-         pageTitle: 'Origin Framework Components',
-         section: 'components'
+         pageTitle: 'Featured',
+         section: 'docs'
       }
    });
 
