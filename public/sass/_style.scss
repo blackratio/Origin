@@ -21,7 +21,7 @@
 body {
    font-family: 'Roboto', sans-serif;
    font-size: 80%;
-   color: $lynch;
+   color: $purple;
    a {
       color: $purple;
    }
@@ -45,8 +45,8 @@ pre {
    top: 0;
    left: 0;
    width: 100%;
-   padding: 5px 10px;
-   background-color: rgba(255, 255, 255, 1);
+   padding: 15px;
+   background-color: $porcelain;
    ul.left {
       li, a {
          margin: 0 !important;
@@ -70,6 +70,9 @@ pre {
          }
       }
    }
+}
+#mainMenu.active {
+   box-shadow: 0 3px 1px $silver;
 }
 
 
@@ -128,7 +131,7 @@ pre {
    position: relative;
    padding: 70px 50px 50px 50px;
    //@include linear-gradient(rgba(8,104,172,1), rgba(8,64,129,1));
-   @include linear-gradient($purple, $purple);
+   background-color: $porcelain;
    h2 {
       color: $white;
    }

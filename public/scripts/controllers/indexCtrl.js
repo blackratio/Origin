@@ -1,5 +1,5 @@
-controllers.controller('homeCtrl', ['$scope', '$rootScope', '$http',
-function ($scope, $rootScope, $http) {
+controllers.controller('homeCtrl', ['$scope', '$rootScope', '$http', '$timeout',
+function ($scope, $rootScope, $http, $timeout) {
 
    $scope.name = "Daphné";
    $scope.sayHello = function() {
