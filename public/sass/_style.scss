@@ -21,7 +21,7 @@
 body {
    font-family: 'Roboto', sans-serif;
    font-size: 80%;
-   color: $purple;
+   color: $blackgray;
    a {
       color: $purple;
    }
@@ -47,9 +47,10 @@ pre {
    width: 100%;
    padding: 15px;
    background-color: $porcelain;
+   transition: ease 0.4s;
    ul.left {
       li, a {
-         margin: 0 !important;
+         margin: 0;
          padding: 0;
       }
    }
@@ -72,7 +73,8 @@ pre {
    }
 }
 #mainMenu.active {
-   box-shadow: 0 3px 1px $silver;
+   box-shadow: 0 1px 3px $silver;
+   padding: 5px 15px;
 }
 
 
@@ -97,25 +99,44 @@ pre {
    background-color: $redStrong;
    color: $white;
 }
-.btn_outline {
+.btn_outline_light {
+   background-color: transparent !important;
    border-color: $lynch;
    color: $lynch;
 }
-.btn.btn_light {
-   background-color: $purpleLight;
-   color: $white;
+.btn_outline_light:hover {
+   background-color: $white !important;
+   border-color: transparent;
+   color: $lynch;
 }
-.btn.btn_light:hover {
-   background-color: $white;
+.btn_outline_strong {
+   background-color: transparent !important;
+   border-color: $purple;
    color: $purple;
 }
-.btn_outline:hover {
-   background-color: $lynch !important;
-   border-color: $lynch;
+.btn_outline_strong:hover {
+   background-color: $purple !important;
+   border-color: $purple;
    color: $white;
 }
 
+.btn.btn_light {
+   background-color: $white;
+   color: $lynch;
+}
+.btn.btn_light:hover {
+   background-color: $lynch;
+   color: $white;
+}
 
+.btn.btn_strong {
+   background-color: $purple;
+   color: $white;
+}
+.btn.btn_strong:hover {
+   background-color: $purpleStrong;
+   color: $white;
+}
 
 
 /************************************************
@@ -133,7 +154,7 @@ pre {
    //@include linear-gradient(rgba(8,104,172,1), rgba(8,64,129,1));
    background-color: $porcelain;
    h2 {
-      color: $white;
+      color: $purple;
    }
    #btn_wrapper {
       margin-top: 40px;
@@ -141,8 +162,8 @@ pre {
          margin: 0 10px;
       }
       .btn_outline {
-         border-color: $white;
-         color: $white;
+         border-color: $purpleLight;
+         color: $purpleLight;
 
       }
       .btn_outline:hover {
@@ -153,7 +174,7 @@ pre {
    }
    #infos_version {
       margin-top: 30px;
-      color: $white;
+      color: $purpleLight;
    }
 }
 
@@ -168,7 +189,7 @@ pre {
    }
    ul {
       a {
-         color: $purpleLight;
+         color: $purpleStrong;
          padding: 5px 20px;
       }
       a:hover {
@@ -181,7 +202,12 @@ pre {
 }
 
 .content_highLight {
-   background-color: $purpleStrong;
+   background-color: $purple;
+   color: $white;
+}
+
+.content_highLight2 {
+   background-color: $pink;
    color: $white;
 }
 

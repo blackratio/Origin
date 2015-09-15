@@ -3,11 +3,3 @@
 		#{$prefix}#{$property}: $value;
 	}
 }
-
-a,
-button,
-input[type="submit"] {
-	@include css3(transition, 0.7s, ease);
-	cursor: pointer;
-   text-decoration: none;
-}
