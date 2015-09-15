@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-controllers.controller('homeCtrl', ['$scope', '$rootScope', '$http', '$timeout',
-function ($scope, $rootScope, $http, $timeout) {
-=======
+
 controllers.controller('homeCtrl', ['$scope', '$rootScope', '$http', '$firebaseObject',
 function ($scope, $rootScope, $http, $firebaseObject) {
->>>>>>> Stashed changes
 
    $scope.name = "Daphné";
    $scope.sayHello = function() {
