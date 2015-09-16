@@ -15,8 +15,7 @@ var OriginFramework = angular.module('OriginFramework', [
    'directives',
    'ui.router',
    'lodash',
-   'ngStorage',
-   'firebase'
+   'ngStorage'
 ]);
 
 
